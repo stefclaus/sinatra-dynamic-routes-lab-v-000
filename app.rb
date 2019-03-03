@@ -15,4 +15,9 @@ class App < Sinatra::Base
     # returns the phrase the number of times it is in the paramater
     do "#{params[:phrase] until params[:phrase] == params [:number]}"
   end
+
+  get '/say/:word1/:word2/:word3/:word4/:word5' do
+  end
+
+  
 end
