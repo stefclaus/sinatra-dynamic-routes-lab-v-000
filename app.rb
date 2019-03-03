@@ -37,6 +37,7 @@ class App < Sinatra::Base
     operation = params[:operation]
     "#{num1.send(operations[operation], num2)}"
     end
+    
   end
 
 
