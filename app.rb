@@ -11,4 +11,8 @@ class App < Sinatra::Base
     "#{params[:number].to_i ** 2}"
   end
 
+  get '/:number/:phrase' do
+    # return the number squared
+    "#{params[:number].to_i ** 2}"
+  end
 end
