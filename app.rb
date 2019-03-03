@@ -25,9 +25,18 @@ class App < Sinatra::Base
   end
 
   get '/:operation/:number1/:number2' do
-      operation = params[:operation]
-      "#{params[:number1].to_i + params[:number2].to_i}"
-    end
+    # perform operation on both numbers and return the result
+  operations = {
+    "add" => :+,
+    "subtract" => :-,
+    "multiply" => :*,
+    "divide" => :/
+  }
+  num1 = params[:number1].to_i
+  num2 = params[:number2].to_i
+  operation = params[:operation]
+  "#{num1.send(operations[operation], num2)}"
+end
   end
 
 
