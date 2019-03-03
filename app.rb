@@ -11,10 +11,13 @@ class App < Sinatra::Base
     "#{params[:number].to_i ** 2}"
   end
 
-  get '/:number/:phrase' do
-    # returns the phrase the number of times it is in the paramater
-    "#{params[:phrase] * params[:number].to_i}"
-    #"#{params[:phrase] until params[:phrase] == params [:number]}"
+  get '/say/:number/:phrase' do
+    # return the phrase number of times
+      message = ""
+      params[:number].to_i.times do
+      message += "#{params[:phrase]} \n"
+    end
+      message
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
